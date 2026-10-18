@@ -58,9 +58,9 @@ The project also uses the built-in SPI and Wire libraries.
 6. An unregistered card is rejected.
 
 ## Registered Students
-- Ayush
-- Ishan
-- Divya
+- Ayush as Green Card
+- Ishan as Blue Card
+- Divya as Red Card
 
 Each student must have a unique UID matching their RFID card.
 
