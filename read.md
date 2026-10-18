@@ -84,4 +84,4 @@ Attendance is stored in RAM, so records reset when the Arduino or simulation res
 - Ayush Raj (Roll No - 22)
 - Aryan Raj (Roll No - 23)
 - Divya Jyoti Mehta (Roll No - 24)
-- Ishan Chetan (Roll No - 25) **Main**
+- Ishan Chetan (Roll No - 25) is **Main**
