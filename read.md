@@ -81,7 +81,7 @@ Attendance is stored in RAM, so records reset when the Arduino or simulation res
 
 ## Author
 - Anurag (Roll No - 21)
-- Ayush Raj (Roll No - 22)
+- Ayush Raj (Roll No - 22) is **Contributer**
 - Aryan Raj (Roll No - 23)
 - Divya Jyoti Mehta (Roll No - 24)
-- Ishan Chetan (Roll No - 25) is **Main**
+- Ishan Chetan (Roll No - 25) is **Contributer**
