@@ -1,21 +1,29 @@
 # RFID-Based Smart Attendance System
 
 ## Project Overview
-This project demonstrates an RFID-based attendance system using an Arduino Uno R3, an MFRC522 RFID reader, and a 16x2 I2C LCD. When a registered RFID card is scanned, the system identifies the student and displays the attendance status on the LCD and Serial Monitor.
+An RFID-based attendance system built using Arduino Uno R3, an MFRC522 RFID reader, and a 16x2 I2C LCD. The system identifies registered students by their RFID card UID and displays their attendance status on the LCD and Serial Monitor.
 
-## Components Used
+## Features
+- Identifies registered students: Ayush, Ishan, and Divya
+- Marks attendance when a registered RFID card is scanned
+- Prevents duplicate attendance during the same running session
+- Rejects unknown RFID cards
+- Displays student names and attendance status on the LCD
+- Prints scan details to the Serial Monitor
+- Simulated using Wokwi
+
+## Hardware Components
 - Arduino Uno R3
 - MFRC522 RFID reader
-- RFID card or tag
+- RFID cards
 - 16x2 I2C LCD
 - Jumper wires
-- Wokwi online simulator
 
 ## Circuit Connections
 
 ### RC522 RFID Reader
 
-| RC522 Pin | Arduino Uno |
+| RC522 Pin | Arduino Uno Pin |
 |---|---|
 | SDA / SS | D10 |
 | SCK | D13 |
@@ -28,7 +36,7 @@ This project demonstrates an RFID-based attendance system using an Arduino Uno R
 
 ### I2C LCD
 
-| LCD Pin | Arduino Uno |
+| LCD Pin | Arduino Uno Pin |
 |---|---|
 | GND | GND |
 | VCC | 5V |
@@ -36,40 +44,44 @@ This project demonstrates an RFID-based attendance system using an Arduino Uno R
 | SCL | A5 |
 
 ## Required Libraries
-Install or include these Arduino libraries:
-- `MFRC522`
-- `LiquidCrystal_I2C`
+- MFRC522
+- LiquidCrystal_I2C
 
-The code also uses the built-in `SPI` and `Wire` libraries.
+The project also uses the built-in SPI and Wire libraries.
 
 ## How It Works
-1. The system initializes the RFID reader and LCD.
-2. A user scans an RFID card.
-3. The Arduino reads the card's UID.
-4. If the UID matches the registered student's UID, attendance is marked as present.
-5. Unknown cards are rejected.
-6. The attendance status is displayed on the LCD and Serial Monitor.
+1. The Arduino initializes the RFID reader and LCD.
+2. A student scans an RFID card.
+3. The system reads the card UID and compares it with the registered UIDs.
+4. A recognized student is shown by name, and attendance is marked as present.
+5. A repeated scan shows that attendance has already been marked.
+6. An unregistered card is rejected.
+
+## Registered Students
+- Ayush
+- Ishan
+- Divya
+
+Each student must have a unique UID matching their RFID card.
 
 ## Simulation
-The project was tested using the Wokwi online simulator.
+**Wokwi Project:** https://wokwi.com/projects/478195688271631361
 
-**Wokwi Project Link:** https://wokwi.com/projects/478195688271631361
+## Source Code
+The Arduino program is available in `sketch.ino` in this repository.
 
-## Important Notes
-- The example code uses a registered UID of `01:02:03:04` and the sample student name `Ishan`. Update these values to match your own card and student details.
-- Attendance is stored in RAM, so the attendance flag resets when the Arduino restarts.
-- This is an educational prototype, not a production attendance system.
+## Limitations
+Attendance is stored in RAM, so records reset when the Arduino or simulation restarts. This is an educational prototype and does not yet store permanent attendance records.
 
 ## Future Improvements
-- Support multiple registered students.
-- Store attendance records with date and time.
-- Add an SD card or database for permanent storage.
-- Prevent duplicate attendance across restarts.
-- Add a real-time clock module.
+- Record attendance date and time
+- Store attendance permanently
+- Support exporting attendance records
+- Add more registered students
 
 ## Author
 - Anurag (Roll No - 21)
 - Ayush Raj (Roll No - 22)
 - Aryan Raj (Roll No - 23)
 - Divya Jyoti Mehta (Roll No - 24)
-- Ishan Chetan (Roll No - 25)
+- Ishan Chetan (Roll No - 25) **Main**
